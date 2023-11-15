@@ -6,6 +6,7 @@ import org.workshop.coffee.domain.Product;
 
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.List;
+import static org.junit.Assert.*;
 
 public class SearchRepositoryTest {
     
