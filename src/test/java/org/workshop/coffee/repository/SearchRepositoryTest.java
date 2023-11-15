@@ -14,9 +14,8 @@ public class SearchRepositoryTest {
         List<Product> products = searchRepository.searchProduct("apple");
         
         assertNotNull("Products should not be null", products);
-        assertEquals("Expected 0 products for null input", 0, products.size());
 
-        // assertEquals(2, products.size());
+        assertEquals(2, products.size());
         assertEquals("Apple iPhone 12", products.get(0).getProductName());
         assertEquals("The latest iPhone from Apple", products.get(0).getDescription());
         assertEquals("Apple MacBook Pro", products.get(1).getProductName());
@@ -41,7 +40,6 @@ public class SearchRepositoryTest {
         List<Product> products = searchRepository.searchProduct(null);
         // assertNotNull(products);
         assertNotNull("Products should not be null", products);
-        assertEquals("Expected 0 products for null input", 0, products.size());
 
         assertEquals(0, products.size());
     }
@@ -50,9 +48,8 @@ public class SearchRepositoryTest {
     public void testSearchProductWithSQLInjection() {
         SearchRepository searchRepository = new SearchRepository();
         List<Product> products = searchRepository.searchProduct("'; DROP TABLE Product; --");
-        // assertNotNull(products);
+        assertNotNull(products);
         assertNotNull("Products should not be null", products);
-        assertEquals("Expected 0 products for null input", 0, products.size());
         assertEquals(0, products.size());
     }
     
@@ -60,9 +57,8 @@ public class SearchRepositoryTest {
     public void testSearchProductWithXSSAttack() {
         SearchRepository searchRepository = new SearchRepository();
         List<Product> products = searchRepository.searchProduct("<script>alert('XSS Attack');</script>");
-        // assertNotNull(products);
+        assertNotNull(products);
         assertNotNull("Products should not be null", products);
-        assertEquals("Expected 0 products for null input", 0, products.size());
         assertEquals(0, products.size());
     }
 }
