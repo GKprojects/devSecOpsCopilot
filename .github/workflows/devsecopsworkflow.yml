@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - dev
-      - master  # Change to your default branch name if needed
+  workflow_dispatch:
 jobs:
   Build_and_test:
     runs-on: ubuntu-latest
