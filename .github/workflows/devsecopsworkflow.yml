@@ -19,7 +19,9 @@ jobs:
       run: mvn -B package --file pom.xml -DskipTests
     - name: check package
       run: |
+        echo "In current working dir"
         ls
+        echo "traget folder"
         ls ./target
     # - name: Test Maven
     #   run: mvn -Dtest=SearchRepositoryTest test
