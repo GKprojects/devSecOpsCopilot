@@ -16,10 +16,10 @@ jobs:
     #   run: mvn -B package --file pom.xml
 
     - name: Build Test Maven
-      run: mvn clean package
+      run: mvn -B package --file pom.xml
       
     - name: Build Test Maven
-      run: mvn test
+      run: mvn -Dtest=SearchRepositoryTest test
 
   #   - name: Generate SBOM
   #     run: mvn org.cyclonedx:cyclonedx-maven-plugin:makeAggregateBom
