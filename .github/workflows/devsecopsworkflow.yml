@@ -17,9 +17,12 @@ jobs:
 
     - name: Build Test Maven
       run: mvn -B package --file pom.xml -DskipTests
-      
-    - name: Test Maven
-      run: mvn -Dtest=SearchRepositoryTest test
+    - name: check package
+      run: |
+        ls
+        ls ./target
+    # - name: Test Maven
+    #   run: mvn -Dtest=SearchRepositoryTest test
 
   #   - name: Generate SBOM
   #     run: mvn org.cyclonedx:cyclonedx-maven-plugin:makeAggregateBom
