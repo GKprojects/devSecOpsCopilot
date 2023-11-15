@@ -1,6 +1,12 @@
-import static org.junit.jupiter.api.Assertions.*;
+package org.workshop.coffee.repository;
 
-class SearchRepositoryTest {
+import org.junit.jupiter.api.Test;
+import org.workshop.coffee.domain.Product;
+
+import static org.junit.jupiter.api.Assertions.*;
+import java.util.List;
+
+public class SearchRepositoryTest {
 
     @Test
     void testSearchProduct() {
